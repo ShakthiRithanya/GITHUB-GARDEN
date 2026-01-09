@@ -1,68 +1,47 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import "tailwindcss";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900;
   }
-  a:hover {
-    color: #747bff;
+}
+
+@theme {
+  --color-garden-100: #f0fdf4;
+  --color-garden-200: #dcfce7;
+  --color-garden-300: #bbf7d0;
+  --color-garden-400: #86efac;
+  --color-garden-500: #4ade80;
+  --color-garden-600: #22c55e;
+  --color-garden-700: #15803d;
+  --color-garden-800: #166534;
+  --color-garden-900: #14532d;
+
+  --color-earth-100: #fdf4f0;
+  --color-earth-800: #5c4033;
+
+  --animate-sway: sway 3s ease-in-out infinite;
+  --animate-grow: grow 1s ease-out forwards;
+
+  @keyframes sway {
+
+    0%,
+    100% {
+      transform: rotate(-5deg);
+    }
+
+    50% {
+      transform: rotate(5deg);
+    }
   }
-  button {
-    background-color: #f9f9f9;
+
+  @keyframes grow {
+    0% {
+      transform: scale(0);
+    }
+
+    100% {
+      transform: scale(1);
+    }
   }
 }
